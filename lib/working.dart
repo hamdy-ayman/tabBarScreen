@@ -41,68 +41,53 @@ class _workingState extends State<working> {
             body: TabBarView(
               children: [
                 Mylist(),
-                Container(
-                  width: double.infinity,
-                  height: double.infinity,
-                  child: Column(
-                    children: [
-                      Row(
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.all(10.0),
-                            child: Stack(
+                Scaffold(
+                  appBar: AppBar(
+                      elevation: 0,
+                      backgroundColor: Colors.white,
+                      title: Padding(
+                        padding: const EdgeInsets.only(top: 13.0),
+                        child: Container(
+                          width: double.infinity,
+                          height: 66,
+                          child: Padding(
+                            padding: const EdgeInsets.only(left: 15.0),
+                            child: Row(
+                              crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 CircleAvatar(
-                                  radius: 35,
+                                  radius: 23,
                                   backgroundColor: Colors.green,
                                 ),
-                                Container(
-                                  height: 70,
-                                  width: 70,
-                                  alignment: Alignment.bottomRight,
-                                  child: CircleAvatar(
-                                    radius: 12,
-                                    backgroundColor: Color(0xff0ACF5A),
-                                    child: Icon(Icons.control_point,
-                                        color: Colors.white),
-                                  ),
+                                Column(
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsets.only(
+                                          right: 40, top: 5),
+                                      child: Text(
+                                        'MyStatus',
+                                        style: TextStyle(
+                                            color: Colors.black,
+                                            fontSize: 15),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.only(left: 5),
+                                      child: Text(
+                                        'Tap to add status update',
+                                        style: TextStyle(
+                                            color: Colors.black,
+                                            fontSize: 10),
+                                      ),
+                                    ),
+                                  ],
                                 ),
                               ],
                             ),
                           ),
-                          Column(
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.only(right: 90,bottom: 10),
-                                child: Text(
-                                  'Username',
-                                  style: TextStyle(fontWeight: FontWeight.bold),
-                                ),
-                              ),
-                              Text(
-                                'Tap to add status update',
-                                style: TextStyle(color: Color(0xffC4C4C4)),
-                              )
-                            ],
-                          ),
-                          SizedBox()
-                        ],
-                      ),
-                      Container(
-                          height: 30,
-                          width: double.infinity,
-                          color: Color(0xffF4F4F4),child: Padding(
-                            padding: const EdgeInsets.only(top: 5,left: 5),
-                            child: Text('Recent update',style: TextStyle(color: Color(0xffA5A5A5)),),
-                          )),
-                      Container(
-                        height: double.infinity,
-                        width: double.infinity,
-                        child:Mylist1(),
-                      ),
-                    ],
-
-                  ),
+                        ),
+                      )),
+                  body: Mylist1(),
                 ),
                 Mylist2(),
               ],
